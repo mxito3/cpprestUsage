@@ -13,5 +13,16 @@ def index():
     response['userName']="yapie"
     response['password']="yapiePassword"
     return jsonify(response)
+
+@app.route('/arrayTest')
+def arrayTest():
+    userInfo=[]
+    userName="yapie"
+    userPassword="yapiePassword"
+    userInfo.append(userName)
+    userInfo.append(userPassword)
+    response={}
+    response['userInfo']=userInfo
+    return jsonify(response)
 if __name__ == "__main__":
     app.run(host='0.0.0.0', threaded=True, debug=True, port=8080)
